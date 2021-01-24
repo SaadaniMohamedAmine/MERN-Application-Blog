@@ -28,7 +28,7 @@ router.post('/:userId',(req,res)=>{
 
 //get all posts
 router.get('/',(req,res)=>{
-    Post.find()
+    Post.find().populate('writer')
        .then((posts)=>res.json(posts))
        .catch(err=>console.error(err.message))
 })

@@ -21,7 +21,7 @@ router.post('/',(req,res)=>{
 
 //get all users
 router.get('/',(req,res)=>{
-    User.find()
+    User.find().populate("posts")
      .then(users=>res.json(users)) 
      .catch((err)=>console.error(err.message)) 
 })
